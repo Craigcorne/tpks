@@ -33,7 +33,7 @@ import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -261,7 +261,8 @@ function App() {
           </Container>
         </main>
         <footer>
-         <div className="text-center"> ©Copyright {new Date().getFullYear()}All rights reserved</div>
+        <Footer />
+         {/* <div className="text-center"> ©Copyright {new Date().getFullYear()}All rights reserved</div> */}
         </footer>
       </div>
     </BrowserRouter>

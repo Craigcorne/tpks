@@ -33,11 +33,12 @@ import ProductEditScreen from './screens/ProductEditScreen';
 import OrderListScreen from './screens/OrderListScreen';
 import UserListScreen from './screens/UserListScreen';
 import UserEditScreen from './screens/UserEditScreen';
-import MapScreen from './screens/MapScreen';
+// import Footer from './components/Footer';
+
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
-  const { fullBox, cart, userInfo } = state;
+  const { cart, userInfo } = state;
 
   const signoutHandler = () => {
     ctxDispatch({ type: 'USER_SIGNOUT' });
@@ -60,17 +61,14 @@ function App() {
     };
     fetchCategories();
   }, []);
+
   return (
     <BrowserRouter>
       <div
         className={
           sidebarIsOpen
-            ? fullBox
-              ? 'site-container active-cont d-flex flex-column full-box'
-              : 'site-container active-cont d-flex flex-column'
-            : fullBox
-            ? 'site-container d-flex flex-column full-box'
-            : 'site-container d-flex flex-column'
+            ? 'd-flex flex-column site-container active-cont'
+            : 'd-flex flex-column site-container'
         }
       >
         <ToastContainer position="bottom-center" limit={1} />
@@ -85,10 +83,15 @@ function App() {
               </Button>
 
               <LinkContainer to="/">
-                <Navbar.Brand>amazona</Navbar.Brand>
+                <Navbar.Brand>TeesPantsKicks</Navbar.Brand>
               </LinkContainer>
+              
+              {/* <SearchBox /> */}
+             
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
+               &nbsp;
+               {' '}
                 <SearchBox />
                 <Nav className="me-auto  w-100  justify-content-end">
                   <Link to="/cart" className="nav-link">
@@ -149,7 +152,7 @@ function App() {
               : 'side-navbar d-flex justify-content-between flex-wrap flex-column'
           }
         >
-          <Nav className="flex-column text-white w-100 p-2">
+          <Nav className="flex-column text-white  w-100 p-2">
             <Nav.Item>
               <strong>Categories</strong>
             </Nav.Item>
@@ -181,14 +184,6 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-              <Route
-                path="/map"
-                element={
-                  <ProtectedRoute>
-                    <MapScreen />
-                  </ProtectedRoute>
-                }
-              />
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
               <Route
                 path="/order/:id"
@@ -211,28 +206,12 @@ function App() {
                 element={<ShippingAddressScreen />}
               ></Route>
               <Route path="/payment" element={<PaymentMethodScreen />}></Route>
-              {/* Admin Routes */}
+              {/* Admin Routes  */}
               <Route
                 path="/admin/dashboard"
                 element={
                   <AdminRoute>
                     <DashboardScreen />
-                  </AdminRoute>
-                }
-              ></Route>
-              <Route
-                path="/admin/orders"
-                element={
-                  <AdminRoute>
-                    <OrderListScreen />
-                  </AdminRoute>
-                }
-              ></Route>
-              <Route
-                path="/admin/users"
-                element={
-                  <AdminRoute>
-                    <UserListScreen />
                   </AdminRoute>
                 }
               ></Route>
@@ -244,7 +223,23 @@ function App() {
                   </AdminRoute>
                 }
               ></Route>
-              <Route
+               <Route
+                path="/admin/orders"
+                element={
+                  <AdminRoute>
+                    <OrderListScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+               <Route
+                path="/admin/users"
+                element={
+                  <AdminRoute>
+                    <UserListScreen/>
+                  </AdminRoute>
+                }
+              ></Route>
+               <Route
                 path="/admin/product/:id"
                 element={
                   <AdminRoute>
@@ -256,7 +251,7 @@ function App() {
                 path="/admin/user/:id"
                 element={
                   <AdminRoute>
-                    <UserEditScreen />
+                    <UserEditScreen/>
                   </AdminRoute>
                 }
               ></Route>
@@ -266,7 +261,7 @@ function App() {
           </Container>
         </main>
         <footer>
-          <div className="text-center">All rights reserved</div>
+         <div className="text-center"> ©Copyright {new Date().getFullYear()}All rights reserved</div>
         </footer>
       </div>
     </BrowserRouter>

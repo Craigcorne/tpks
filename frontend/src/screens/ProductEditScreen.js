@@ -232,7 +232,7 @@ export default function ProductEditScreen() {
                   value={category}
                   onChange={(e) => setCategory(e.target.value)}
                 >
-                  <option value="">Sample category</option>
+                  <option value="">Others</option>
                   <option value="Shoes">Shoes</option>
                 </Form.Select>
           </Form.Group>

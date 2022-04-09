@@ -34,21 +34,21 @@ const Footer =() =>{
                       TeesPantsKicks
                   </SocialLogo>
                   <WebsiteRights>TeesPantsKicks © {new Date().getFullYear()}
-                  All rights reserved</WebsiteRights>
+                   All rights reserved</WebsiteRights>
                   <SocialIcons>
-                      <SocialIconLink href="/" target="_blank"
+                      <SocialIconLink href="//" target="_blank"
                       arial-label="Facebook">
                           <FaFacebook/>
                       </SocialIconLink>
-                      <SocialIconLink href="/" target="_blank"
+                      <SocialIconLink href="//" target="_blank"
                       arial-label="Instagram">
                           <FaInstagram/>
                       </SocialIconLink>
-                      <SocialIconLink href="/" target="_blank"
+                      <SocialIconLink href="//" target="_blank"
                       arial-label="Telegram">
                           <FaTelegram/>
                       </SocialIconLink>
-                      <SocialIconLink href="/" target="_blank"
+                      <SocialIconLink href="//" target="_blank"
                       arial-label="Whatsapp">
                           <FaWhatsapp/>
                       </SocialIconLink>

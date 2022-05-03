@@ -137,7 +137,7 @@ export default function OrderScreen() {
           type: 'resetOptions',
           value: {
             'client-id': clientId,
-            currency: 'KSH',
+            currency: 'USD',
           },
         });
         paypalDispatch({ type: 'setLoadingStatus', value: 'pending' });
@@ -268,7 +268,7 @@ export default function OrderScreen() {
                       <LoadingBox />
                     ) : (
                       <div>
-                        <PayPalButtons
+                      <PayPalButtons
                           createOrder={createOrder}
                           onApprove={onApprove}
                           onError={onError}

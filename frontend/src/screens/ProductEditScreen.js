@@ -57,11 +57,13 @@ export default function ProductEditScreen() {
   const [name, setName] = useState('');
   const [slug, setSlug] = useState('');
   const [price, setPrice] = useState('');
+  const [exchangeRate, setExchangeRate] = useState('');
   const [image, setImage] = useState('');
   const [images, setImages] = useState([]);
   const [category, setCategory] = useState('');
   const [countInStock, setCountInStock] = useState('');
   const [brand, setBrand] = useState('');
+  const [type, setType] = useState('');
   const [description, setDescription] = useState('');
 
   useEffect(() => {
@@ -72,11 +74,13 @@ export default function ProductEditScreen() {
         setName(data.name);
         setSlug(data.slug);
         setPrice(data.price);
+        setExchangeRate(data.exchangeRate)
         setImage(data.image);
         setImages(data.images);
         setCategory(data.category);
         setCountInStock(data.countInStock);
         setBrand(data.brand);
+        setType(data.type);
         setDescription(data.description);
         dispatch({ type: 'FETCH_SUCCESS' });
       } catch (err) {
@@ -100,10 +104,12 @@ export default function ProductEditScreen() {
           name,
           slug,
           price,
+          exchangeRate,
           image,
           images,
           category,
           brand,
+          type,
           countInStock,
           description,
         },
@@ -190,6 +196,14 @@ export default function ProductEditScreen() {
               required
             />
           </Form.Group>
+          <Form.Group className="mb-3" controlId="name">
+            <Form.Label>Exchange Rate</Form.Label>
+            <Form.Control
+              value={exchangeRate}
+              onChange={(e) => setExchangeRate(e.target.value)}
+              required
+            />
+          </Form.Group>
           <Form.Group className="mb-3" controlId="image">
             <Form.Label>Image File</Form.Label>
             <Form.Control
@@ -243,6 +257,17 @@ export default function ProductEditScreen() {
               onChange={(e) => setBrand(e.target.value)}
               required
             />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="category">
+            <Form.Label>Type</Form.Label>
+            <Form.Select
+                  aria-label="Type"
+                  value={type}
+                  onChange={(e) => setType(e.target.value)}
+                >
+                  <option value="New">New</option>
+                  <option value="Thrift">Thrift</option>
+                </Form.Select>
           </Form.Group>
           <Form.Group className="mb-3" controlId="countInStock">
             <Form.Label>Count In Stock</Form.Label>

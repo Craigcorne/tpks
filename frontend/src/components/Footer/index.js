@@ -48,7 +48,7 @@ const Footer =() =>{
                       arial-label="Telegram">
                           <FaTelegram/>
                       </SocialIconLink>
-                      <SocialIconLink href="//" target="_blank"
+                      <SocialIconLink href="//https://chat.whatsapp.com/IyNvhid5dCpEywahjrwMfw" target="_blank"
                       arial-label="Whatsapp">
                           <FaWhatsapp/>
                       </SocialIconLink>

@@ -20,8 +20,10 @@ productRouter.post(
       slug: 'sample-name-' + Date.now(),
       image: '/images/p1.jpg',
       price: 0,
+      exchangeRate: 0,
       category: 'sample category',
       brand: 'sample brand',
+      type: 'sample ',
       countInStock: 0,
       rating: 0,
       numReviews: 0,
@@ -43,10 +45,12 @@ productRouter.put(
       product.name = req.body.name;
       product.slug = req.body.slug;
       product.price = req.body.price;
+      product.exchangeRate = req.body.exchangeRate;
       product.image = req.body.image;
       product.images = req.body.images;
       product.category = req.body.category;
       product.brand = req.body.brand;
+      product.type = req.body.type;
       product.countInStock = req.body.countInStock;
       product.description = req.body.description;
       await product.save();

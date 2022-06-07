@@ -130,24 +130,8 @@ function ProductScreen() {
             src={selectedImage || product.image}
             alt={product.name}
           ></img>
-        </Col>
-        <Col md={3}>
-          <ListGroup variant="flush">
-            <ListGroup.Item>
-              <Helmet>
-                <title>{product.name}</title>
-              </Helmet>
-              <h1>{product.name}</h1>
-            </ListGroup.Item>
-            <ListGroup.Item>
-              <Rating
-                rating={product.rating}
-                numReviews={product.numReviews}
-              ></Rating>
-            </ListGroup.Item>
-            <ListGroup.Item>Price : Ksh{product.price}</ListGroup.Item>
-            <ListGroup.Item>
-              <Row xs={1} md={2} className="g-2">
+                  <ListGroup.Item>
+              <Row xs={6} md={6} className="g-2">
                 {[product.image, ...product.images].map((x) => (
                   <Col key={x}>
                     <Card>
@@ -164,6 +148,23 @@ function ProductScreen() {
                 ))}
               </Row>
             </ListGroup.Item>
+        </Col>
+         <Col md={3}>
+          <ListGroup variant="flush">
+            <ListGroup.Item>
+              <Helmet>
+                <title>{product.name}</title>
+              </Helmet>
+              <h1>{product.name}</h1>
+            </ListGroup.Item>
+            <ListGroup.Item>
+              <Rating
+                rating={product.rating}
+                numReviews={product.numReviews}
+              ></Rating>
+            </ListGroup.Item>
+            <ListGroup.Item>Price : Ksh{product.price}</ListGroup.Item>
+
             <ListGroup.Item>
               Description:
               <p>{product.description}</p>

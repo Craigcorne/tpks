@@ -18,7 +18,7 @@ export default function PaymentMethodScreen() {
   );
 
   useEffect(() => {
-    if (!shippingAddress.address) {
+    if (!shippingAddress.city) {
       navigate('/shipping');
     }
   }, [shippingAddress, navigate]);

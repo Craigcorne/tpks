@@ -14,12 +14,8 @@ export default function ShippingAddressScreen() {
     cart: { shippingAddress },
   } = state;
   const [fullName, setFullName] = useState(shippingAddress.fullName || '');
-  const [address, setAddress] = useState(shippingAddress.address || '');
   const [phoneNumber, setPhoneNumber] = useState(shippingAddress.phoneNumber || '');
   const [city, setCity] = useState(shippingAddress.city || '');
-  const [postalCode, setPostalCode] = useState(
-    shippingAddress.postalCode || ''
-  );
   const [country, setCountry] = useState(shippingAddress.country || '');
   useEffect(() => {
     if (!userInfo) {
@@ -33,10 +29,8 @@ export default function ShippingAddressScreen() {
       type: 'SAVE_SHIPPING_ADDRESS',
       payload: {
         fullName,
-        address,
         phoneNumber,
         city,
-        postalCode,
         country,
       },
     });
@@ -44,10 +38,10 @@ export default function ShippingAddressScreen() {
       'shippingAddress',
       JSON.stringify({
         fullName,
-        address,
+        // address,
         phoneNumber,
         city,
-        postalCode,
+        // postalCode,
         country,
       })
     );
@@ -112,22 +106,6 @@ export default function ShippingAddressScreen() {
                   <option value="">Select...</option>
                   <option value="Kenya">Kenya</option>
                 </Form.Select>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="postalCode">
-            <Form.Label>Postal Code</Form.Label>
-            <Form.Control
-              value={postalCode}
-              onChange={(e) => setPostalCode(e.target.value)}
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="address">
-            <Form.Label>Address</Form.Label>
-            <Form.Control
-              value={address}
-              onChange={(e) => setAddress(e.target.value)}
-              required
-            />
           </Form.Group>
           <div className="mb-3">
             <Button variant="primary" type="submit">

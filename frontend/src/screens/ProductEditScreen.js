@@ -57,7 +57,6 @@ export default function ProductEditScreen() {
   const [name, setName] = useState('');
   const [slug, setSlug] = useState('');
   const [price, setPrice] = useState('');
-  const [exchangeRate, setExchangeRate] = useState('');
   const [image, setImage] = useState('');
   const [images, setImages] = useState([]);
   const [category, setCategory] = useState('');
@@ -74,7 +73,6 @@ export default function ProductEditScreen() {
         setName(data.name);
         setSlug(data.slug);
         setPrice(data.price);
-        setExchangeRate(data.exchangeRate)
         setImage(data.image);
         setImages(data.images);
         setCategory(data.category);
@@ -104,7 +102,6 @@ export default function ProductEditScreen() {
           name,
           slug,
           price,
-          exchangeRate,
           image,
           images,
           category,
@@ -193,14 +190,6 @@ export default function ProductEditScreen() {
             <Form.Control
               value={price}
               onChange={(e) => setPrice(e.target.value)}
-              required
-            />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="name">
-            <Form.Label>Exchange Rate</Form.Label>
-            <Form.Control
-              value={exchangeRate}
-              onChange={(e) => setExchangeRate(e.target.value)}
               required
             />
           </Form.Group>

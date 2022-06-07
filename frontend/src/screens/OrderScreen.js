@@ -15,6 +15,7 @@ import { Store } from '../Store';
 import { getError } from '../utils';
 import { toast } from 'react-toastify';
 
+
 function reducer(state, action) {
   switch (action.type) {
     case 'FETCH_REQUEST':
@@ -67,6 +68,7 @@ export default function OrderScreen() {
     });
 
   const [{ isPending }, paypalDispatch] = usePayPalScriptReducer();
+
 
   function createOrder(data, actions) {
     return actions.order

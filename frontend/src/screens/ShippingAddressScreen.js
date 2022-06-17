@@ -69,6 +69,7 @@ export default function ShippingAddressScreen() {
             <Form.Label>Phone Number</Form.Label>
             <Form.Control
               value={phoneNumber}
+              placeholder="2547123456890"
               onChange={(e) => setPhoneNumber(e.target.value)}
               required
             />

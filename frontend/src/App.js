@@ -263,7 +263,6 @@ function App() {
         </main>
         <footer>
         <Footer />
-         {/* <div className="text-center"> ©Copyright {new Date().getFullYear()}All rights reserved</div> */}
         </footer>
       </div>
     </BrowserRouter>

@@ -16,6 +16,11 @@ import { getError } from '../utils';
 import { toast } from 'react-toastify';
 
 
+
+
+
+
+
 function reducer(state, action) {
   switch (action.type) {
     case 'FETCH_REQUEST':
@@ -50,6 +55,23 @@ function reducer(state, action) {
   }
 }
 export default function OrderScreen() {
+//   const[rates, setRates] = useState('USD');
+
+//   var myHeaders = new Headers();
+// myHeaders.append("apikey", "yqeWij4mtSl0yPJYYcwdoAnWaSWE8Wv4");
+
+// var requestOptions = {
+//   method: 'GET',
+//   redirect: 'follow',
+//   headers: myHeaders
+// };
+
+// fetch("https://api.apilayer.com/exchangerates_data/latest?symbols=USD&base=KES", requestOptions)
+//   .then(response => {
+//    setRates(response.data.rates);
+//   })
+//   .then(result => console.log(result))
+//   .catch(error => console.log('error', error));
   const { state } = useContext(Store);
   const { userInfo } = state;
 
@@ -75,7 +97,7 @@ export default function OrderScreen() {
       .create({
         purchase_units: [
           {
-            amount: { value: order.totalPrice },
+            amount: { value: order.totalPrice},
           },
         ],
       })
@@ -147,6 +169,7 @@ export default function OrderScreen() {
       loadPaypalScript();
     }
   }, [order, userInfo, orderId, navigate, paypalDispatch, successPay,successDeliver,]);
+
 
   async function deliverOrderHandler() {
     try {
